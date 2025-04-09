@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Nombre: Carla Fernández Alcázar
+Curso: DAW1
+Fecha: 09/04/2025
+Ejercicio: Esquema ejercicio 1
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="heladeria">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="helado" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:choice>
+                                <xs:element name="chocolate" type="Gramos"/>
+                                <xs:element name="fresa" type="Gramos"/>
+                            </xs:choice>
+                            
+                            <xs:choice>
+                                <xs:element name="vainilla" type="Gramos"/>
+                                <xs:element name="turron" type="Gramos"/>
+                                <xs:element name="nata" type="Gramos"/>
+                            </xs:choice>
+                        </xs:sequence>
+                        <xs:attribute name="fabricación" type="xs:date"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="Gramos">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
