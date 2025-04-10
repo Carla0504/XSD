@@ -1,0 +1,6 @@
+<xs:simpleType name="claveFija">
+    <xs:restriction base="xs:string">
+        <xs:length value="10"/>
+        <xs:pattern value="[a-zA-Z0-9]{10}"/>
+    </xs:restriction>
+</xs:simpleType>
