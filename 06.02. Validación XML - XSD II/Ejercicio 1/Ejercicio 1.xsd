@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Nombre: Carla Fernández Alcázar
+Curso: DAW1
+Fecha: 24/04/2025
+Ejercicio: Ejercicio 1 - Respuestas admitidas
+-->
+
+<!-- Usando xs:pattern -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="respuesta">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[ABCDE]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>
+
+<!-- Usando xs:enumeration -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="respuesta">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="A"/>
+                <xs:enumeration value="B"/>
+                <xs:enumeration value="C"/>
+                <xs:enumeration value="D"/>
+                <xs:enumeration value="E"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>

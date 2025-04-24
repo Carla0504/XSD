@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Nombre: Carla Fernández Alcázar
+Curso: DAW1
+Fecha: 24/04/2025
+Ejercicio: Ejercicio 2 - Números y letras
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="fichas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ficha" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="codigo" type="dosDigitosDe00a19"/>
+                            <xs:element name="nombre" type="xs:string"/>
+                        </xs:sequence>
+                        
+                        <xs:attribute name="numero" type="dosDigitosDe00a19" use="required"/>
+                        <xs:attribute name="letra" type="letraXYZ" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="dosDigitosDe00a19">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0[0-9]|1[0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="letraXYZ">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="X"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="Z"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
